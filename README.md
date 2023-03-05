@@ -1,6 +1,8 @@
 # thalamocortical2
 Large-scale thalamocortical network model for simulating physiological and paroxysmal brain rhythms (4-7 Hz spike and wave discharges) described in manuscripts:
+
 Dervinis, M and Crunelli, V (2023) Sleep waves in a large-scale corticothalamic model constrained by activities intrinsic to neocortical networks and single thalamic neurons. bioRxiv 2022.10.31.514504; doi: https://doi.org/10.1101/2022.10.31.514504
+
 Dervinis, M and Crunelli, V (2023) Spike-and-wave discharges of absence seizures in a sleep waves-constrained corticothalamic model. bioRxiv 2022.10.31.514510; doi: https://doi.org/10.1101/2022.10.31.514510
 
 The main file is ```init.hoc```
