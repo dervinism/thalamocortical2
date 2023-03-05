@@ -20,4 +20,5 @@ Major points:
 - To obtain SWDs induced following the introduction of strongly intrinsically bursting cells in deep cortical layers, set the ```state``` variable inside the ```init.hoc``` file to ```'awake_long'```, comment out lines 12 and 15, and uncomment lines 13 and 16 in the file ```Cx.hoc```.
 - To obtain SWDs induced by the increase in the T-type calcium current in NRT cells, set the ```state``` variable inside the ```init.hoc``` file to ```'awake_long'``` and adjust variable ```gcabar_its``` on line 333 inside the ```NRTcell.hoc``` file.
 - To obtain SWDs induced by the increase in the T-type calcium current in the higher order TC cells, set the ```state``` variable inside the ```init.hoc``` file to ```'awake_long'``` and adjust variable ```gcabar_it``` on line 236 inside the ```TCcell.hoc``` file.
-- 
+- The repository also contains Matlab files used to analyse the simulated data. The main files are ```coherenceAnalysis.m```, ```coherenceAnalysis2.m```, ```coherenceAnalysis4.m```, ```compareSync.m```, ```summaryFigs.m```, and ```frFractions.m```.
+- For other issues, consult the manuscripts.
