@@ -9,6 +9,7 @@ The main file is ```init.hoc```
 
 Language: Neuron
 
+Major points:
 - Executing the init.hoc file on Neuron with all the parameters set up as it is currently, would produce 20 minutes of simulated neural activity resembling wakefulness. The data is saved in DAT files corresponding to individual cell models in the network. The files contain time, voltage, and synaptic current data.
 - In order to obtain simulations of physiological network sleep oscillations, adjust the ```state``` variable in the file ```init.hoc```.
 - To get pure cortical simulations, set variables isFO and isHO to zero in the file ThCxprocs.hoc.
