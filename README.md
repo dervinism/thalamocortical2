@@ -14,4 +14,10 @@ Major points:
 - In order to obtain simulations of physiological network sleep oscillations, adjust the ```state``` variable in the file ```init.hoc```.
 - To get pure cortical simulations, set variables isFO and isHO to zero in the file ThCxprocs.hoc.
 - To obtain SWDs induced by the hyperpolarisation of thalamocortical (TC) cells, set the ```state``` variable inside the ```init.hoc``` file to ```'SWDs_long'```.
-- To obtain SWDs induced by tonic GABAa inhibition of TC cells, set the ```state``` variable inside the ```init.hoc``` file to ```'awake_long'``` and adjust variable ```GABAfullsyn.gbar_c``` on line 698 inside the ```TCcell.hoc file```.
+- To obtain SWDs induced by tonic GABAa inhibition of TC cells, set the ```state``` variable inside the ```init.hoc``` file to ```'awake_long'``` and adjust variable ```GABAfullsyn.gbar_c``` on line 698 inside the ```TCcell.hoc``` file.
+- To obtain SWDs induced by the decrease in the cortical GABAa current, set the ```state``` variable inside the ```init.hoc``` file to ```'awake_long'``` and adjust variable ```GABAsyn.gbar_a``` on line 693 inside the ```Cx3cell.hoc``` file.
+- To obtain SWDs induced by the increase in the cortical AMPA current, set the ```state``` variable inside the ```init.hoc``` file to ```'awake_long'``` and adjust variable ```GLUsyn.gbar_a``` on line 622 inside the ```Cx3cell.hoc``` file.
+- To obtain SWDs induced following the introduction of strongly intrinsically bursting cells in deep cortical layers, set the ```state``` variable inside the ```init.hoc``` file to ```'awake_long'```, comment out lines 12 and 15, and uncomment lines 13 and 16 in the file ```Cx.hoc```.
+- To obtain SWDs induced by the increase in the T-type calcium current in NRT cells, set the ```state``` variable inside the ```init.hoc``` file to ```'awake_long'``` and adjust variable ```gcabar_its``` on line 333 inside the ```NRTcell.hoc``` file.
+- To obtain SWDs induced by the increase in the T-type calcium current in the higher order TC cells, set the ```state``` variable inside the ```init.hoc``` file to ```'awake_long'``` and adjust variable ```gcabar_it``` on line 236 inside the ```TCcell.hoc``` file.
+- 
