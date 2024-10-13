@@ -1,21 +1,23 @@
 # thalamocortical2
-Large-scale thalamocortical network model for simulating physiological and paroxysmal brain rhythms (4-7 Hz spike and wave discharges) described in manuscripts:
+Large-scale thalamocortical network model for simulating physiological and paroxysmal brain rhythms (4-7 Hz spike and wave discharges) described in articles:
 
-Dervinis, M and Crunelli, V (2023) Sleep waves in a large-scale corticothalamic model constrained by activities intrinsic to neocortical networks and single thalamic neurons. bioRxiv 2022.10.31.514504; doi: https://doi.org/10.1101/2022.10.31.514504
+Dervinis M, Crunelli V. Sleep waves in a large-scale corticothalamic model constrained by activities intrinsic to neocortical networks and single thalamic neurons. CNS Neurosci Ther. 2024; 30:e14206. https://doi:10.1111/cns.14206
 
-Dervinis, M and Crunelli, V (2023) Spike-and-wave discharges of absence seizures in a sleep waves-constrained corticothalamic model. bioRxiv 2022.10.31.514510; doi: https://doi.org/10.1101/2022.10.31.514510
+Dervinis M, Crunelli V. Spike-and-wave discharges of absence seizures in a sleep waves-constrained corticothalamic model. CNS Neurosci Ther. 2024; 30:e14204. https://doi:10.1111/cns.14204
 
 The main file is ```init.hoc```
 
 Language: Neuron
 
 Major points:
-- To execute the model, run Neuron in a headless mode (no GUI). To run the model in the serial manner, type in the two lines bellow in the terminal:
-```nrnivmodl```
-```nrngui init.hoc```
-To run the model in a parallel manner (recommended), you have to set up Neuron to run with MPI (read more about this in the [Neuron documentation](https://nrn.readthedocs.io/en/latest/courses/mpi_parallelization.html)). Once set up, type in these two lines:
-```nrnivmodl```
-```mpiexec -np 16 nrniv -mpi init.hoc```
+- To run the model in the serial manner, type in the terminal:
+```
+nrnivmodl && nrngui init.hoc
+```
+To run the model in a parallel manner (recommended), you have to set up Neuron to run with MPI (read more about this in the [Neuron documentation](https://nrn.readthedocs.io/en/latest/courses/mpi_parallelization.html)). Once set up, type in this line:
+```
+nrnivmodl && mpiexec -np 16 nrniv -mpi init.hoc
+```
 - Executing the init.hoc file on Neuron with all the parameters set up as it is currently, would produce 20 minutes of simulated neural activity resembling wakefulness. The data is saved in DAT files corresponding to individual cell models in the network. The files contain time, voltage, and synaptic current data.
 - In order to obtain simulations of physiological network sleep oscillations, adjust the ```state``` variable in the file ```init.hoc```.
 - To get pure cortical simulations, set variables isFO and isHO to zero in the file ```ThCxprocs.hoc```.
@@ -27,4 +29,4 @@ To run the model in a parallel manner (recommended), you have to set up Neuron t
 - To obtain SWDs induced by the increase in the T-type calcium current in NRT cells, set the ```state``` variable inside the ```init.hoc``` file to ```'awake_long'``` and adjust variable ```gcabar_its``` on line 333 inside the ```NRTcell.hoc``` file.
 - To obtain SWDs induced by the increase in the T-type calcium current in the higher order TC cells, set the ```state``` variable inside the ```init.hoc``` file to ```'awake_long'``` and adjust variable ```gcabar_it``` on line 236 inside the ```TCcell.hoc``` file.
 - The repository also contains Matlab files used to analyse the simulated data. The main files are ```coherenceAnalysis.m```, ```coherenceAnalysis2.m```, ```coherenceAnalysis4.m```, ```compareSync.m```, ```summaryFigs.m```, and ```frFractions.m```.
-- For other issues, consult the manuscripts.
+- For other issues, consult the articles.
