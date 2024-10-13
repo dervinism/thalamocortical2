@@ -10,9 +10,15 @@ The main file is ```init.hoc```
 Language: Neuron
 
 Major points:
+- To execute the model, run Neuron in a headless mode (no GUI). To run the model in the serial manner, type in the two lines bellow in the terminal:
+```nrnivmodl```
+```nrngui init.hoc```
+To run the model in a parallel manner (recommended), you have to set up Neuron to run with MPI (read more about this in the [Neuron documentation](https://nrn.readthedocs.io/en/latest/courses/mpi_parallelization.html)). Once set up, type in these two lines:
+```nrnivmodl```
+```mpiexec -np 16 nrniv -mpi init.hoc```
 - Executing the init.hoc file on Neuron with all the parameters set up as it is currently, would produce 20 minutes of simulated neural activity resembling wakefulness. The data is saved in DAT files corresponding to individual cell models in the network. The files contain time, voltage, and synaptic current data.
 - In order to obtain simulations of physiological network sleep oscillations, adjust the ```state``` variable in the file ```init.hoc```.
-- To get pure cortical simulations, set variables isFO and isHO to zero in the file ThCxprocs.hoc.
+- To get pure cortical simulations, set variables isFO and isHO to zero in the file ```ThCxprocs.hoc```.
 - To obtain SWDs induced by the hyperpolarisation of thalamocortical (TC) cells, set the ```state``` variable inside the ```init.hoc``` file to ```'SWDs_long'```.
 - To obtain SWDs induced by tonic GABAa inhibition of TC cells, set the ```state``` variable inside the ```init.hoc``` file to ```'awake_long'``` and adjust variable ```GABAfullsyn.gbar_c``` on line 698 inside the ```TCcell.hoc``` file.
 - To obtain SWDs induced by the decrease in the cortical GABAa current, set the ```state``` variable inside the ```init.hoc``` file to ```'awake_long'``` and adjust variable ```GABAsyn.gbar_a``` on line 693 inside the ```Cx3cell.hoc``` file.
